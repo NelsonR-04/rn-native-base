@@ -16,6 +16,8 @@
     "prettier:fix": "prettier --check --write \"(__tests__||src)/**/*.{ts(x),js}\""
   },
   "dependencies": {
+    "@react-navigation/native": "^6.0.10",
+    "@react-navigation/native-stack": "^6.6.2",
     "i18next": "^21.8.9",
     "react": "17.0.2",
     "react-i18next": "^11.17.2",

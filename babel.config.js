@@ -10,6 +10,7 @@ module.exports = {
           '@Navigator': './src/navigator',
           '@Tests': './__tests__',
           '@Utils': './src/utils',
+          '@Views': './src/views',
         },
       },
     ],
