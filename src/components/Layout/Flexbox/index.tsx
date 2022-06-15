@@ -1,4 +1,4 @@
-import React, { ReactNode, RefObject, Children, FC } from 'react';
+import React, { Children, FC, ReactNode, RefObject } from 'react';
 import { LayoutChangeEvent, View, ViewStyle } from 'react-native';
 import styles from './styles';
 
