@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 import { render } from '@testing-library/react-native';
-import Flexbox from '@Components/Layout/Flexbox';
+import Flexbox from '@Components/layout/flexbox';
 
 describe('Test Layout <Flexbox /> component', () => {
   const props = {

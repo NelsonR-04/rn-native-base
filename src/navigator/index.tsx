@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from '@Views/home';
 import Login from '@Views/login';
 
-const StackNavigator = () => {
+const StackNavigator: FC = () => {
   const Stack = createNativeStackNavigator();
 
   return (
