@@ -42,6 +42,7 @@
       "@Components/*": ["components/*"],
       "@I18n/*": ["i18n/*"],
       "@Navigator/*": ["navigator/*"],
+      "@Storybook/*": ["../storybook/*"],
       "@Tests/*": ["../__tests__/*"],
       "@Utils/*": ["utils/*"],
       "@Views/*": ["views/*"],

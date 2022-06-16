@@ -10,13 +10,13 @@ const StackNavigator: FC = () => {
     <Stack.Navigator>
       <Stack.Group>
         <Stack.Screen
-          name="Login"
-          component={Login}
+          name="Home"
+          component={Home}
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="Home"
-          component={Home}
+          name="Login"
+          component={Login}
           options={{ headerShown: false }}
         />
       </Stack.Group>

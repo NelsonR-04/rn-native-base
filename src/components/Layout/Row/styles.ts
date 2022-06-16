@@ -1,10 +1,8 @@
 import { StyleSheet, ViewStyle } from 'react-native';
 
-interface FlexboxStyle {
+interface RowStyle {
   [key: string]: ViewStyle;
 }
-
-const FLEX_DIRECTION_OPTIONS = ['row', 'column'];
 
 const JUSTIFY_CONTENT_OPTIONS = [
   'flex-start',
@@ -25,7 +23,7 @@ const ALIGN_ITEMS_OPTIONS = [
 
 const TEXT_ALIGN_OPTIONS = ['auto', 'left', 'right', 'center', 'justify'];
 
-const GAP_OPTIONS = [0, 4, 8, 12, 16, 20, 24, 32, 40, 48];
+const GAP_OPTIONS = [4, 8, 12, 16, 20, 24, 32, 40, 48];
 
 const buildGaps = () => {
   let gaps = {};
@@ -33,33 +31,13 @@ const buildGaps = () => {
   GAP_OPTIONS.forEach(gap => {
     gaps = {
       ...gaps,
-      [`columnGap${gap}`]: { marginTop: gap },
       [`rowGap${gap}`]: { marginStart: gap },
-      [`marginTop${gap}`]: { marginTop: gap },
-      [`marginBottom${gap}`]: { marginBottom: gap },
-      [`marginHorizontal${gap}`]: { marginHorizontal: gap },
-      [`marginVertical${gap}`]: { marginVertical: gap },
       [`paddingHorizontal${gap}`]: { paddingHorizontal: gap },
       [`paddingVertical${gap}`]: { paddingVertical: gap },
     };
   });
 
   return gaps;
-};
-
-const buildFlexDirection = () => {
-  let directions = {};
-
-  FLEX_DIRECTION_OPTIONS.forEach(direction => {
-    directions = {
-      ...directions,
-      [direction]: {
-        flexDirection: direction,
-      },
-    };
-  });
-
-  return directions;
 };
 
 const buildJustifyContent = () => {
@@ -84,7 +62,7 @@ const buildAlignItems = () => {
     itemsAlignments = {
       ...itemsAlignments,
       [`alignItems${alignItems}`]: {
-        alignItems: alignItems,
+        alignItems,
       },
     };
   });
@@ -98,8 +76,8 @@ const buildTextAlign = () => {
   TEXT_ALIGN_OPTIONS.forEach(textAlign => {
     textAlignment = {
       ...textAlignment,
-      textAlign: {
-        textAlign: textAlign,
+      [`textAlign${textAlign}`]: {
+        textAlign,
       },
     };
   });
@@ -109,11 +87,11 @@ const buildTextAlign = () => {
 
 export default StyleSheet.create({
   ...buildGaps(),
-  ...buildFlexDirection(),
   ...buildJustifyContent(),
   ...buildAlignItems(),
   ...buildTextAlign(),
   wrapper: {
+    flexDirection: 'row',
     width: '100%',
   },
-}) as FlexboxStyle;
+}) as RowStyle;

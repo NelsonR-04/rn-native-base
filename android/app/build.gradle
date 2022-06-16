@@ -232,6 +232,10 @@ android {
         }
     }
     buildTypes {
+        storybook {
+            applicationIdSuffix ".storybook"
+            versionNameSuffix "-storybook"
+        }
         debug {
             signingConfig signingConfigs.debug
         }
