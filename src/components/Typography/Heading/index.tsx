@@ -1,5 +1,6 @@
 import React, { FC, ReactNode } from 'react';
 import { Text } from 'react-native';
+import { useTheme } from '@react-navigation/native';
 import styles from './styles';
 
 const Heading: FC<HeadingProps> = ({
@@ -7,13 +8,15 @@ const Heading: FC<HeadingProps> = ({
   bold = false,
   textAlingment = 'left',
   underline = false,
-  color = 'black',
+  color,
   testID,
   children,
 }) => {
+  const { colors } = useTheme();
+
   const weight = bold ? 'bold' : 'regular';
   const wrapperStyle = {
-    ...(color && styles[color]),
+    ...(color ? styles[color] : { color: colors.text }),
     ...(underline && styles.underline),
     ...styles[size],
     ...styles[weight],

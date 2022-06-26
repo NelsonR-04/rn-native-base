@@ -3,7 +3,6 @@ import {
   SafeAreaView,
   ScrollView,
   StatusBar,
-  Text,
   useColorScheme,
   View,
 } from 'react-native';
@@ -14,33 +13,16 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import { Heading } from '@Components/Typography';
+import { Body, Heading } from '@Components/Typography';
 import styles from './styles';
 
 const Section: FC<{
   title: string;
 }> = ({ children, title }) => {
-  const isDarkMode = useColorScheme() === 'dark';
   return (
     <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
+      <Heading bold>{title}</Heading>
+      <Body size="large">{children}</Body>
     </View>
   );
 };
@@ -65,9 +47,9 @@ const Home: FC = () => {
           }}>
           <Section title="Step One">
             Edit
-            <Heading size="large" bold>
+            <Body size="large" bold>
               App.tsx
-            </Heading>
+            </Body>
             to change this screen and then come back to see your edits.
           </Section>
           <Section title="See Your Changes">
