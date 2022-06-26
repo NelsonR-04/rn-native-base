@@ -1,5 +1,6 @@
 import { initReactI18next } from 'react-i18next';
 import i18n from 'i18next';
+import en from '@I18n/EN/common.json';
 import es from '@I18n/ES/common.json';
 import { getDeviceLanguage } from '@Utils/device';
 
@@ -8,7 +9,7 @@ const resources = {
     translation: es,
   },
   en: {
-    translation: '',
+    translation: en,
   },
 };
 

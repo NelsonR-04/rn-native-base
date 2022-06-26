@@ -1,5 +1,10 @@
 import { StyleSheet } from 'react-native';
 
-const styles = StyleSheet.create({});
-
-export default styles;
+export default StyleSheet.create({
+  wrapper: {
+    flex: 1,
+  },
+  content: {
+    flexGrow: 1,
+  },
+});

@@ -9,20 +9,18 @@ const StackNavigator: FC = () => {
   return (
     <Stack.Navigator
       screenOptions={{
-        headerShown: true,
         headerMode: 'float',
-        title: 'home',
       }}>
       <Stack.Group>
-        <Stack.Screen
-          name="Home"
-          component={Home}
-          options={{ headerShown: true }}
-        />
         <Stack.Screen
           name="Login"
           component={Login}
           options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{ headerShown: true }}
         />
       </Stack.Group>
     </Stack.Navigator>
