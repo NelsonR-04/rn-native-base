@@ -1,13 +1,5 @@
 import { StyleSheet } from 'react-native';
-import {
-  black,
-  blue,
-  gray,
-  green,
-  purple,
-  red,
-  white,
-} from '@walmart/gtp-shared-components/dist/theme/colors.json';
+import { black, gray, white } from '../../assets/styles/colors.json';
 
 const colorStyles = {
   white: {
@@ -16,45 +8,33 @@ const colorStyles = {
   black: {
     color: black,
   },
-  blue100: {
-    color: blue[100],
-  },
-  gray160: {
-    color: gray[160],
-  },
-  gray140: {
-    color: gray[140],
-  },
-  gray130: {
-    color: gray[130],
-  },
-  gray110: {
-    color: gray[110],
-  },
-  gray100: {
-    color: gray[100],
+  gray30: {
+    color: gray[30],
   },
   gray50: {
     color: gray[50],
   },
-  gray30: {
-    color: gray[30],
+  gray100: {
+    color: gray[100],
   },
-  green100: {
-    color: green[100],
+  gray110: {
+    color: gray[110],
   },
-  red100: {
-    color: red[100],
+  gray130: {
+    color: gray[130],
   },
-  purple90: {
-    color: purple[90],
+  gray140: {
+    color: gray[140],
+  },
+  gray160: {
+    color: gray[160],
   },
 };
 
 export default StyleSheet.create({
   ...colorStyles,
   fontFamily: {
-    fontFamily: 'Bogle',
+    fontFamily: 'Lato',
   },
   regular: {
     fontWeight: '400',

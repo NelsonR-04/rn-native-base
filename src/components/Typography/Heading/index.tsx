@@ -31,15 +31,7 @@ const Heading: FC<HeadingProps> = ({
 export interface HeadingProps {
   bold?: boolean;
   size?: 'large' | 'medium' | 'small';
-  color?:
-    | 'white'
-    | 'black'
-    | 'gray160'
-    | 'gray130'
-    | 'gray100'
-    | 'gray50'
-    | 'red100'
-    | 'green100';
+  color?: 'white' | 'black' | 'gray160' | 'gray130' | 'gray100' | 'gray50';
   textAlingment?: 'left' | 'center' | 'right';
   underline?: boolean;
   testID?: string;

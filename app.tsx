@@ -1,16 +1,21 @@
 import React from 'react';
-import { StatusBar, useColorScheme } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
+import { useColorScheme } from 'react-native';
+import {
+  DarkTheme,
+  DefaultTheme,
+  NavigationContainer,
+} from '@react-navigation/native';
 import StackNavigator from '@Navigator/index';
+import 'react-native-gesture-handler';
 import './i18n.config';
 
 const App = () => {
-  const isDarkMode =
-    useColorScheme() === 'dark' ? 'dark-content' : 'light-content';
+  const scheme = useColorScheme();
+  const theme = scheme === 'dark' ? DarkTheme : DefaultTheme;
 
   return (
-    <NavigationContainer>
-      <StatusBar barStyle={isDarkMode} />
+    <NavigationContainer theme={theme}>
+      {/* <StatusBar barStyle={isDarkMode} /> */}
       <StackNavigator />
     </NavigationContainer>
   );

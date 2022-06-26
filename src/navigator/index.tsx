@@ -1,18 +1,23 @@
 import React, { FC } from 'react';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createStackNavigator } from '@react-navigation/stack';
 import Home from '@Views/home';
 import Login from '@Views/login';
 
 const StackNavigator: FC = () => {
-  const Stack = createNativeStackNavigator();
+  const Stack = createStackNavigator();
 
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: true,
+        headerMode: 'float',
+        title: 'home',
+      }}>
       <Stack.Group>
         <Stack.Screen
           name="Home"
           component={Home}
-          options={{ headerShown: false }}
+          options={{ headerShown: true }}
         />
         <Stack.Screen
           name="Login"

@@ -40,11 +40,7 @@ export interface BodyProps {
     | 'gray110'
     | 'gray100'
     | 'gray50'
-    | 'gray30'
-    | 'red100'
-    | 'green100'
-    | 'purple90'
-    | 'blue100';
+    | 'gray30';
   textAlingment?: 'left' | 'center' | 'right';
   underline?: boolean;
   testID?: string;

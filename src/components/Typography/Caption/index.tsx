@@ -28,16 +28,7 @@ const Caption: FC<CaptionProps> = ({
 
 export interface CaptionProps {
   bold?: boolean;
-  color?:
-    | 'white'
-    | 'black'
-    | 'gray160'
-    | 'gray130'
-    | 'gray100'
-    | 'gray50'
-    | 'red100'
-    | 'green100'
-    | 'green100';
+  color?: 'white' | 'black' | 'gray160' | 'gray130' | 'gray100' | 'gray50';
   textAlingment?: 'left' | 'center' | 'right';
   underline?: boolean;
   testID?: string;

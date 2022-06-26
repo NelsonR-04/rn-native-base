@@ -4,7 +4,9 @@ module.exports = {
     [
       'module-resolver',
       {
+        extensions: ['.js', '.ios.js', '.android.js', '.json'],
         alias: {
+          '@Assets/': './src/assets',
           '@Components': './src/components',
           '@I18n': './src/i18n',
           '@Navigator': './src/navigator',
