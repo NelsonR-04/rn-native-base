@@ -19,6 +19,5 @@ configure(() => {
 const Storybook = getStorybookUI({
   asyncStorage: require('@react-native-async-storage/async-storage').default,
 });
-console.log(process.env);
 
 export default Storybook;

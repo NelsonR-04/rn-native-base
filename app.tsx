@@ -1,10 +1,10 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { StatusBar, useColorScheme } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import StackNavigator from '@Navigator/index';
 import './i18n.config';
 
-const App: FC = () => {
+const App = () => {
   const isDarkMode =
     useColorScheme() === 'dark' ? 'dark-content' : 'light-content';
 
