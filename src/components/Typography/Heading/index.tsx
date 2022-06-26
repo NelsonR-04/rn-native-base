@@ -1,6 +1,7 @@
 import React, { FC, ReactNode } from 'react';
 import { Text } from 'react-native';
 import { useTheme } from '@react-navigation/native';
+import { Colors, Gradients, setTextColor } from '@Components/Typography/styles';
 import styles from './styles';
 
 const Heading: FC<HeadingProps> = ({
@@ -9,14 +10,20 @@ const Heading: FC<HeadingProps> = ({
   textAlingment = 'left',
   underline = false,
   color,
+  gradient = 100,
   testID,
   children,
 }) => {
   const { colors } = useTheme();
 
   const weight = bold ? 'bold' : 'regular';
+
+  const textColor = (color && gradient && setTextColor(color, gradient)) || {
+    color: colors.text,
+  };
+
   const wrapperStyle = {
-    ...(color ? styles[color] : { color: colors.text }),
+    ...textColor,
     ...(underline && styles.underline),
     ...styles[size],
     ...styles[weight],
@@ -34,7 +41,8 @@ const Heading: FC<HeadingProps> = ({
 export interface HeadingProps {
   bold?: boolean;
   size?: 'large' | 'medium' | 'small';
-  color?: 'white' | 'black' | 'gray160' | 'gray130' | 'gray100' | 'gray50';
+  color?: Colors;
+  gradient?: Gradients;
   textAlingment?: 'left' | 'center' | 'right';
   underline?: boolean;
   testID?: string;

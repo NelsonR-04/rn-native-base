@@ -8,7 +8,7 @@ export default {
   component: Caption,
 } as ComponentMeta<typeof Caption>;
 
-const TemplateHeading: ComponentStory<typeof Caption> = args => {
+const TemplateHeading: ComponentStory<typeof Caption> = (args) => {
   return (
     <Row flexDirection="column" gap={40}>
       <Row flexDirection="column" gap={24}>

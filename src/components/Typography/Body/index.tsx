@@ -1,6 +1,7 @@
 import React, { FC, ReactNode } from 'react';
 import { Text } from 'react-native';
 import { useTheme } from '@react-navigation/native';
+import { Colors, Gradients, setTextColor } from '@Components/Typography/styles';
 import styles from './styles';
 
 const Body: FC<BodyProps> = ({
@@ -9,14 +10,20 @@ const Body: FC<BodyProps> = ({
   size = 'medium',
   underline = false,
   color,
+  gradient = 100,
   testID,
   children,
 }) => {
   const { colors } = useTheme();
 
   const weight = bold ? 'bold' : 'regular';
+
+  const textColor = (color && gradient && setTextColor(color, gradient)) || {
+    color: colors.text,
+  };
+
   const wrapperStyle = {
-    ...(color ? styles[color] : { color: colors.text }),
+    ...textColor,
     ...(underline && styles.underline),
     ...styles[size],
     ...styles[weight],
@@ -34,17 +41,8 @@ const Body: FC<BodyProps> = ({
 export interface BodyProps {
   bold?: boolean;
   size?: 'large' | 'medium' | 'small';
-  color?:
-    | 'primary'
-    | 'white'
-    | 'black'
-    | 'gray160'
-    | 'gray140'
-    | 'gray130'
-    | 'gray110'
-    | 'gray100'
-    | 'gray50'
-    | 'gray30';
+  color?: Colors;
+  gradient?: Gradients;
   textAlingment?: 'left' | 'center' | 'right';
   underline?: boolean;
   testID?: string;

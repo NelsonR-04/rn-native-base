@@ -15,9 +15,6 @@ describe('tests typography <Heading />', () => {
     const { getByTestId, getByText } = render(<Heading {...props} />);
     const typographyHeading = getByTestId('typography-heading');
 
-    const styles = typographyHeading.props.style;
-    expect(styles).toHaveProperty('color', '#000000');
-
     expect(typographyHeading).toBeTruthy();
     expect(getByText(expectedtext)).toBeTruthy();
   });

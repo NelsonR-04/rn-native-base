@@ -35,8 +35,7 @@ const Column: FC<ColumnProps> = ({
           <View
             testID={`children-${index}`}
             key={`children-${index}`}
-            style={index !== 0 && childStyle}
-          >
+            style={index !== 0 && childStyle}>
             {child}
           </View>
         );

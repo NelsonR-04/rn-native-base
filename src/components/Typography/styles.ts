@@ -1,41 +1,25 @@
 import { StyleSheet } from 'react-native';
-import { black, gray, primary, white } from '../../assets/styles/colors.json';
+import colors from '../../assets/styles/colors.json';
 
-const colorStyles = {
-  primary: {
-    color: primary[100],
-  },
-  white: {
-    color: white,
-  },
-  black: {
-    color: black,
-  },
-  gray30: {
-    color: gray[30],
-  },
-  gray50: {
-    color: gray[50],
-  },
-  gray100: {
-    color: gray[100],
-  },
-  gray110: {
-    color: gray[110],
-  },
-  gray130: {
-    color: gray[130],
-  },
-  gray140: {
-    color: gray[140],
-  },
-  gray160: {
-    color: gray[160],
-  },
+export type Gradients = 10 | 20 | 30 | 40 | 50 | 60 | 70 | 80 | 90 | 100;
+
+export type Colors =
+  | 'primary'
+  | 'secondary'
+  | 'tertiary'
+  | 'gray'
+  | 'black'
+  | 'white';
+
+export const setTextColor = (color: Colors, gradient: Gradients): any => {
+  const colorKey = colors[color];
+
+  return StyleSheet.create<any>({
+    color: colorKey[gradient] ?? colorKey,
+  });
 };
 
 export default StyleSheet.create({
-  ...colorStyles,
   fontFamily: {
     fontFamily: 'Lato',
   },

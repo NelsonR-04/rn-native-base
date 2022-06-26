@@ -12,7 +12,6 @@ describe('Test render styles layout <Column />', () => {
     const { getByTestId } = render(<Column {...props} />);
     const componentRow = getByTestId('column-id');
 
-    console.log(componentRow.props);
     const { style } = componentRow.props;
     expect(style).toHaveProperty('flexDirection', 'column');
 

@@ -46,11 +46,11 @@ const Home: FC = () => {
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
           <Section title="Step One">
-            Edit
-            <Body color="primary" size="large" bold>
+            Edit&nbsp;
+            <Body size="large" bold>
               App.tsx
             </Body>
-            to change this screen and then come back to see your edits.
+            &nbsp;to change this screen and then come back to see your edits.
           </Section>
           <Section title="See Your Changes">
             <ReloadInstructions />

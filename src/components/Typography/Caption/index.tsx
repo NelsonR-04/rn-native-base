@@ -1,6 +1,7 @@
 import React, { FC, ReactNode } from 'react';
 import { Text } from 'react-native';
 import { useTheme } from '@react-navigation/native';
+import { Colors, Gradients, setTextColor } from '@Components/Typography/styles';
 import styles from './styles';
 
 const Caption: FC<CaptionProps> = ({
@@ -8,14 +9,20 @@ const Caption: FC<CaptionProps> = ({
   textAlingment = 'left',
   underline = false,
   color,
+  gradient = 100,
   testID,
   children,
 }) => {
   const { colors } = useTheme();
 
   const weight = bold ? 'bold' : 'regular';
+
+  const textColor = (color && gradient && setTextColor(color, gradient)) || {
+    color: colors.text,
+  };
+
   const wrapperStyle = {
-    ...(color ? styles[color] : { color: colors.text }),
+    ...textColor,
     ...(underline && styles.underline),
     ...styles[weight],
     ...styles[textAlingment],
@@ -31,7 +38,8 @@ const Caption: FC<CaptionProps> = ({
 
 export interface CaptionProps {
   bold?: boolean;
-  color?: 'white' | 'black' | 'gray160' | 'gray130' | 'gray100' | 'gray50';
+  color?: Colors;
+  gradient?: Gradients;
   textAlingment?: 'left' | 'center' | 'right';
   underline?: boolean;
   testID?: string;

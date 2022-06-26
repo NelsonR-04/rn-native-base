@@ -28,7 +28,7 @@ const GAP_OPTIONS = [4, 8, 12, 16, 20, 24, 32, 40, 48];
 const buildGaps = () => {
   let gaps = {};
 
-  GAP_OPTIONS.forEach(gap => {
+  GAP_OPTIONS.forEach((gap) => {
     gaps = {
       ...gaps,
       [`columnGap${gap}`]: { marginTop: gap },
@@ -43,7 +43,7 @@ const buildGaps = () => {
 const buildJustifyContent = () => {
   let justifycontents = {};
 
-  JUSTIFY_CONTENT_OPTIONS.forEach(justify => {
+  JUSTIFY_CONTENT_OPTIONS.forEach((justify) => {
     justifycontents = {
       ...justifycontents,
       [justify]: {
@@ -58,7 +58,7 @@ const buildJustifyContent = () => {
 const buildAlignItems = () => {
   let itemsAlignments = {};
 
-  ALIGN_ITEMS_OPTIONS.forEach(alignItems => {
+  ALIGN_ITEMS_OPTIONS.forEach((alignItems) => {
     itemsAlignments = {
       ...itemsAlignments,
       [`alignItems${alignItems}`]: {
@@ -73,7 +73,7 @@ const buildAlignItems = () => {
 const buildTextAlign = () => {
   let textAlignment = {};
 
-  TEXT_ALIGN_OPTIONS.forEach(textAlign => {
+  TEXT_ALIGN_OPTIONS.forEach((textAlign) => {
     textAlignment = {
       ...textAlignment,
       [`textAlign${textAlign}`]: {
