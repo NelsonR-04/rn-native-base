@@ -47,7 +47,7 @@ const Home: FC = () => {
           }}>
           <Section title="Step One">
             Edit
-            <Body size="large" bold>
+            <Body color="primary" size="large" bold>
               App.tsx
             </Body>
             to change this screen and then come back to see your edits.

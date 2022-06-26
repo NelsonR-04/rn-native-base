@@ -1,7 +1,10 @@
 import { StyleSheet } from 'react-native';
-import { black, gray, white } from '../../assets/styles/colors.json';
+import { black, gray, primary, white } from '../../assets/styles/colors.json';
 
 const colorStyles = {
+  primary: {
+    color: primary[100],
+  },
   white: {
     color: white,
   },

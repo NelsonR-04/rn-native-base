@@ -35,6 +35,7 @@ export interface BodyProps {
   bold?: boolean;
   size?: 'large' | 'medium' | 'small';
   color?:
+    | 'primary'
     | 'white'
     | 'black'
     | 'gray160'
